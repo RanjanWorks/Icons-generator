@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons.png">
+  <meta property="og:image" content="/images/icons.png">
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@NaN,0,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Icon Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body onload="showBody()">
+  <div class="loader">
+    <h2>Loading...</h2>
+  </div>
+  <div class="num">
+    <h2 data-ol>1</h2>
+    <h2>Choose Icon</h2>
+  </div>
+  <div class="input_box">
+    <select onchange="updateFlag(this)">
+      <option value="material-icons">Material icons</option>
+      <option value="material-symbols-outlined">Material symbols</option>
+      <option value="material-symbols-sharp">Material sharp</option>
+      <option value="3">Font awesome</option>
+      <option value="4">Bootstrap Icons</option>
+      <option value="5">Emoji</option>
+    </select>
+    <i id="search" class="material-icons">search</i>
+    <input id="text" type="text" placeholder="Search" autocomplete="off" />
+  </div>
+
+  <div id="box" class="icon_container"></div>
+  <hr />
+  <div class="num">
+    <h2 data-ol>2</h2>
+    <h2>Choose colors</h2>
+  </div>
+  <div class="color_container">
+    <div class="clr">
+      <h4>Primary</h4>
+      <div class="colorinputs">
+        <label data-lble id="label" for="input-color"></label>
+        <input class="clrinput" id="input-color" value="#0053A6" type="color" />
+        <div class="input_clrbx">
+          <span id="has">#</span>
+
+          <input data-input id="colorinput" type="text" value="0053A6" />
+        </div>
+      </div>
+      <p style="margin-top: 10px; color: #acacac">presets</p>
+      <div class="presets">
+        <span id="span1" style="--clr: #006073"></span>
+        <span id="span1" style="--clr: #046113"></span>
+        <span id="span1" style="--clr: #967d00"></span>
+        <span id="span1" style="--clr: #ad5700"></span>
+        <span id="span1" style="--clr: #a60808"></span>
+        <span id="span1" style="--clr: #8a218a"></span>
+        <span id="span1" style="--clr: #7633b8"></span>
+        <span id="span1" style="--clr: #3340b8"></span>
+        <span id="span1" style="--clr: #b83333"></span>
+        <span id="span1" style="--clr: #3381b8"></span>
+      </div>
+    </div>
+    <div class="clr">
+      <h4>Secondary</h4>
+      <div class="colorinputs">
+        <label data-lble id="label2" style="background-color: #b2d9ff" for="input-color2"></label>
+        <input class="clrinput" id="input-color2" value="#B2D9FF" type="color" />
+        <div class="input_clrbx">
+          <span id="has">#</span>
+
+          <input data-input id="colorinput2" type="text" value="B2D9FF" />
+        </div>
+      </div>
+      <p style="margin-top: 10px; color: #acacac">presets</p>
+      <div class="presets">
+        <span id="span2" style="--clr: #eafbff"></span>
+        <span id="span2" style="--clr: #a8ffb7"></span>
+        <span id="span2" style="--clr: #fff2b0"></span>
+        <span id="span2" style="--clr: #ffc68d"></span>
+        <span id="span2" style="--clr: #ffb0b0"></span>
+        <span id="span2" style="--clr: #ff74ff"></span>
+        <span id="span2" style="--clr: #dbb7ff"></span>
+        <span id="span2" style="--clr: #b6baff"></span>
+        <span id="span2" style="--clr: #ffc7da"></span>
+        <span id="span2" style="--clr: #d4edff"></span>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="num">
+    <h2 data-ol>3</h2>
+    <h2>Preview & download</h2>
+  </div>
+  <div class="preview_container">
+    <div class="preview">
+      <div id="iconContainer" class="icon_preview">
+        <i id="ic" class="material-icons">account_circle</i>
+      </div> 
+      <div class="user">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="download-box">
+    <button id="downloadButton">
+      <i data-lod class="fa fa-download"></i>
+
+      Download
+    </button>
+    <button onclick="openModel()">
+      <i class="material-icons">launch</i>
+      More</button>
+  </div>
+
+  <div class="message">
+    <i class="material-icons">check_circle</i>
+    Icon applied
+  </div>
+ 
+
+<dialog>
+  <div id="top">
+<span>Create Poster</span>
+<i onclick="closeModel()" class="material-icons">close</i>
+  </div>
+  <div class="container24">
+    <div class="controls">
+      <div class="wrap">
+        <label for="">Font style</label>
+       <select onchange="handleFontStyle(this)" >
+        <option style="font-family: 'Google Sans', Helvetica, Arial, sans-serif" value="'Google Sans', Helvetica, Arial, sans-serif">Google Sans</option>
+        <option style="font-family: 'Courier New', Courier, monospace;" value="'Courier New', Courier, monospace">Monospace</option>
+  
+     
+  
+       
+        <option style="font-family: 'Syne Mono', monospace" value="'Syne Mono', monospace">Syne Mono</option>
+  
+        <option style="font-family: 'Saira Stencil One', cursive" value="'Saira Stencil One', cursive">Saira Stencil</option>
+  
+        <option style="font-family: 'Rampart One', cursive" value="'Rampart One', cursive">Rampart</option>
+  
+        <option style="font-family: 'Creepster', cursive" value="'Creepster', cursive">Creepster</option>
+  
+        <option style="font-family: 'Bungee Spice', cursive" value="'Bungee Spice', cursive">Bungee Spice</option>
+  
+        <option style="font-family: 'Faster One', cursive" value="'Faster One', cursive">Faster One</option>
+  
+  
+        <option style="font-family: fantasy" value="fantasy">fantasy </option>
+  
+        <option style="font-family: 'Times New Roman', Times, serif;" value="'Times New Roman', Times, serif">Times roman </option>
+  
+        <option style="font-family: Verdana, Geneva, Tahoma, sans-serif" value="Verdana, Geneva, Tahoma, sans-serif">Verdana </option>
+  
+        <option style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" value="'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Trebuchet</option>
+  
+        <option style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">System-ui</option>
+  
+        <option style="font-family: 'Edu SA Beginner', cursive" value="'Edu SA Beginner', cursive">Cursive</option>
+  
+     
+  
+        <option style="font-family: cursive;" value="cursive">Cursive2 </option>
+  
+        <option style="font-family: 'Borel', cursive" value="'Borel', cursive">Cursive 3</option>
+  
+       </select>
+      </div>
+      <div class="wrap">
+        <label for="">Ratio </label>
+       <input value="16/9" id="ratio" oninput="handleRatio(this)" type="text">
+      </div>
+      <div class="wrap">
+        <label for="">Run HTML</label>
+       <textarea placeholder="Enter HTML..." spellcheck="false" oninput="handleHtml(this)"  id="inputCode"></textarea>
+      </div>
+      <div class="wrap">
+        <label for="">Font size</label>
+        <input value="26" min="10" max="50" oninput="handleFontSize(this)" type="range">
+      </div>
+      <div class="wrap">
+        <label for=""> Poster size</label>
+        <input value="200" oninput="handlePosterSize(this)" min="100" max="600" type="range">
+      </div>
+      <div class="wrap">
+        <label for="">Border </label>
+        <input value="3" oninput="handleRadius(this)" min="0" max="100" type="range">
+      </div>
+    
+      <div class="wrap">
+        <label for="">Text Color</label>
+        <input oninput="handleTextColor(this)" type="color">
+      </div>
+      <div class="wrap">
+        <label for="">Background </label>
+        <input oninput="handleBgColor(this)" type="color">
+      </div>
+      <div class="wrap">
+        <label for=""> Transparnt </label>
+     <i onclick="handleCheck(this)" class="material-icons" >radio_button_unchecked</i>
+      </div>
+     
+      <div class="wrap">
+        <label for="">Download</label>
+  <button onclick="downloadPoster()">Download</button>
+      </div>
+    
+     </div>
+    <div class="posterBox">
+      <div spellcheck="false" contenteditable="true" class="poster">
+        Google
+       </div>
+     </div>
+     
+  </div>
+  
+</dialog>
+<footer>
+  <h5>All code By Ranjan</h5>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.5.3/dist/cleave.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+  <script src="icons.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
