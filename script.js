@@ -4,6 +4,7 @@ let input = document.getElementById("text");
 let message = document.querySelector('.message')
 let poster = document.querySelector('.poster')
 let model = document.querySelector('dialog')
+model.showModal()
 let ic = document.getElementById("ic");
 let box = document.getElementById("box");
 input.addEventListener("input", () => {
@@ -330,6 +331,12 @@ let clr = "#0053a6"
 
 function handleFontSize(e){
   poster.style.fontSize = e.value+"px"
+  let icon = poster.querySelector('i')
+  if(icon){
+   e.max = 100
+  }
+
+  icon.style.fontSize = e.value+"px"
 }
 function handlePosterSize(e){
   poster.style.width = e.value+"px"
@@ -362,6 +369,11 @@ function handleFontStyle(e){
   const selectedFont = e.value;
     poster.style.fontFamily = selectedFont;
 
+}
+
+function importIcon(){
+  poster.innerHTML = iconContainer.innerHTML
+  document.getElementById('inputCode').value = poster.innerHTML
 }
 
 let ifCheck = false

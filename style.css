@@ -409,12 +409,20 @@ dialog select{
   color: #c4ced8;
 }
 dialog button{
-  padding: 10px 30px;
+  padding: 5px 30px;
   background-color: #0053a6;
   border: none;
- border-radius: 10px;
- font-size: 17px;
+ border-radius: 5px;
+ font-size: 15px;
  font-weight: bold;
+}
+
+#import{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blueviolet;
+
 }
 dialog #top{
 
