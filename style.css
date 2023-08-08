@@ -517,6 +517,14 @@ dialog .controls .wrap{
     justify-content: flex-start;
   }
 }
+@media (width <=500px) {
+  .color_container {
+    justify-content: flex-start;
+  }
+  dialog input{
+    width: 100%;
+  }
+}
 @media (width <=900px) {
  .container24{
  display: flex;
